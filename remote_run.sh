@@ -17,11 +17,11 @@ fi
 source venv/bin/activate
 
 # Check if Ollama is running
-if ! pgrep -x "ollama" > /dev/null; then
-    echo "Starting Ollama service..."
-    ollama serve > /dev/null 2>&1 &
-    sleep 3
-fi
+# if ! pgrep -x "ollama" > /dev/null; then
+#     echo "Starting Ollama service..."
+#     ollama serve > /dev/null 2>&1 &
+#     sleep 3
+# fi
 
 # Launch the application
 echo "Starting server on http://localhost:5001"

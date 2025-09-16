@@ -241,7 +241,7 @@ def create_prompt(philosopher, author, topic, history, is_response=False):
 ```javascript
 class DialogueClient {
     constructor(philosopherId) {
-        this.socket = io('http://localhost:5000');
+        this.socket = io('http://localhost:5001');
         this.philosopherId = philosopherId;
         this.conversationId = this.getConversationId();
         
@@ -357,7 +357,7 @@ python app.py
 ```
 
 **5. Open Control Panel:**
-Navigate to `http://localhost:5000`
+Navigate to `http://localhost:5001`
 
 ### Directory Structure
 ```
@@ -385,7 +385,7 @@ philosophical-dialogues/
 
 ### First Time Use
 1. User runs setup script
-2. Opens browser to localhost:5000
+2. Opens browser to localhost:5001
 3. Sees control panel with dropdowns
 4. Selects Philosopher 1 + Author 1 + Model 1
 5. Selects Philosopher 2 + Author 2 + Model 2

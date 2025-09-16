@@ -24,7 +24,7 @@ This application creates automated conversations between two philosopher-author 
    ./setup.sh
    ```
 
-4. **Open your browser** to http://localhost:5000
+4. **Open your browser** to http://localhost:5001
 
 The setup script will automatically:
 - Check for Python and Ollama
@@ -158,8 +158,8 @@ ollama pull model_name
 
 ### Server won't start
 ```bash
-# Check if port 5000 is in use
-lsof -i:5000
+# Check if port 5001 is in use
+lsof -i:5001
 # Kill existing process or use different port
 ```
 
@@ -174,7 +174,7 @@ lsof -i:5000
 ### Change Port
 Edit `dialogue_backend.py` line at bottom:
 ```python
-app.run(host='0.0.0.0', port=8080)  # Change 5000 to 8080
+app.run(host='0.0.0.0', port=8080)  # Change 5001 to 8080
 ```
 
 ### Add Custom Models

@@ -41,7 +41,7 @@ chmod +x setup.sh run.sh
 # Launch application
 ./run.sh
 
-# Open browser to http://localhost:5000
+# Open browser to http://localhost:5001
 ```
 
 ## 🎯 The MVP Successfully Delivers

@@ -637,7 +637,7 @@ if __name__ == '__main__':
     print("""
     ╔══════════════════════════════════════════════════════════╗
     ║   Philosophical Dialogue System - Dual View               ║
-    ║   Server starting on http://localhost:5000               ║
+    ║   Server starting on http://localhost:5001               ║
     ╠══════════════════════════════════════════════════════════╣
     ║   Ensure Ollama is running with required models:         ║
     ║   - ollama pull llama3.2:3b                              ║
@@ -647,4 +647,4 @@ if __name__ == '__main__':
     ╚══════════════════════════════════════════════════════════╝
     """)
     
-    socketio.run(app, host='0.0.0.0', port=5000, debug=False)
+    socketio.run(app, host='0.0.0.0', port=5001, debug=False)

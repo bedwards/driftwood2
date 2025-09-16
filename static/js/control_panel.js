@@ -39,7 +39,7 @@ class ControlPanel {
     }
     
     initializeSocket() {
-        this.socket = io('http://localhost:5000');
+        this.socket = io('http://localhost:5001');
         
         this.socket.on('connect', () => {
             console.log('Connected to server');
@@ -224,14 +224,14 @@ class ControlPanel {
         this.philosopher1Window = window.open(
             `/philosopher/1?conversation_id=${this.conversationId}`,
             `philosopher1_${this.conversationId}`,
-            `width=${windowWidth},height=${windowHeight},left=0,top=50`
+            `width=${windowWidth},height=${windowHeight},left=0,top=50,popup=no`
         );
         
         // Open philosopher 2 window (right side)
         this.philosopher2Window = window.open(
             `/philosopher/2?conversation_id=${this.conversationId}`,
             `philosopher2_${this.conversationId}`,
-            `width=${windowWidth},height=${windowHeight},left=${windowWidth + 40},top=50`
+            `width=${windowWidth},height=${windowHeight},left=${windowWidth + 40},top=50,popup=no`
         );
         
         // Check if windows were blocked

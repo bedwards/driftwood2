@@ -65,7 +65,7 @@ chmod +x setup.sh run.sh
 # 3. Launch the application
 ./run.sh
 
-# 4. Open browser to http://localhost:5000
+# 4. Open browser to http://localhost:5001
 ```
 
 ### Manual Installation
@@ -96,7 +96,7 @@ python app.py
 
 ## 🎮 Usage Flow
 
-1. **Open Control Panel**: Navigate to `http://localhost:5000`
+1. **Open Control Panel**: Navigate to `http://localhost:5001`
 
 2. **Configure Dialogue**:
    - Select Philosopher 1 (e.g., Socrates)
@@ -149,10 +149,10 @@ curl -fsSL https://ollama.com/install.sh | sh
 ollama pull model-name:tag
 ```
 
-### "Connection refused on port 5000"
+### "Connection refused on port 5001"
 ```bash
 # Check if port is in use
-lsof -i:5000
+lsof -i:5001
 
 # Kill process if needed
 kill -9 <PID>
@@ -180,7 +180,7 @@ On Mac Studio with 32GB+ RAM:
 
 Confirm the MVP is working:
 - [ ] Server starts without errors
-- [ ] Control panel loads at http://localhost:5000
+- [ ] Control panel loads at http://localhost:5001
 - [ ] Can select all philosophers and authors
 - [ ] "Begin Dialogue" opens two new tabs
 - [ ] Each tab shows correct philosopher name

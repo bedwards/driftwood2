@@ -130,7 +130,7 @@ echo
 echo "To start the application:"
 echo "  1. Activate virtual environment: source venv/bin/activate"
 echo "  2. Run the server: python app.py"
-echo "  3. Open browser to: http://localhost:5000"
+echo "  3. Open browser to: http://localhost:5001"
 echo
 echo "For Speechify integration:"
 echo "  - Install Speechify Chrome extension"

@@ -32,7 +32,7 @@ class DialogueClient {
     }
     
     initializeSocket() {
-        this.socket = io('http://localhost:5000');
+        this.socket = io('http://localhost:5001');
         
         this.socket.on('connect', () => {
             console.log('Connected to server');
