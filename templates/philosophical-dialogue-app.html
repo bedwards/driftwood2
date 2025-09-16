@@ -1,0 +1,646 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Philosophical Dialogues Through Literary Voices</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Georgia', serif;
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            min-height: 100vh;
+            padding: 2rem;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            background: rgba(255, 255, 255, 0.98);
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            overflow: hidden;
+        }
+
+        header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 2rem;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        .subtitle {
+            font-size: 1.1rem;
+            opacity: 0.95;
+            font-style: italic;
+        }
+
+        .setup-panel {
+            padding: 2rem;
+            background: #f8f9fa;
+            border-bottom: 3px solid #e9ecef;
+        }
+
+        .setup-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .pairing-card {
+            background: white;
+            border-radius: 12px;
+            padding: 1.5rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .pairing-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        .pairing-number {
+            display: inline-block;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 30px;
+            margin-bottom: 1rem;
+            font-weight: bold;
+        }
+
+        .form-group {
+            margin-bottom: 1.2rem;
+        }
+
+        label {
+            display: block;
+            font-weight: 600;
+            color: #495057;
+            margin-bottom: 0.5rem;
+            font-size: 0.95rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        select, input[type="text"] {
+            width: 100%;
+            padding: 0.75rem;
+            border: 2px solid #dee2e6;
+            border-radius: 8px;
+            font-size: 1rem;
+            transition: border-color 0.3s ease;
+            background: white;
+        }
+
+        select:focus, input[type="text"]:focus {
+            outline: none;
+            border-color: #667eea;
+            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+        }
+
+        .topic-section {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 12px;
+            margin-top: 2rem;
+        }
+
+        .button-group {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            margin-top: 1.5rem;
+        }
+
+        button {
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 8px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        #startBtn {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+        }
+
+        #startBtn:hover:not(:disabled) {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
+        }
+
+        #continueBtn {
+            background: linear-gradient(135deg, #56ab2f 0%, #a8e063 100%);
+            color: white;
+            box-shadow: 0 4px 15px rgba(86, 171, 47, 0.3);
+        }
+
+        #continueBtn:hover:not(:disabled) {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(86, 171, 47, 0.4);
+        }
+
+        button:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+            transform: none !important;
+        }
+
+        .dialogue-container {
+            padding: 2rem;
+            background: white;
+            min-height: 400px;
+            max-height: 70vh;
+            overflow-y: auto;
+            scroll-behavior: smooth;
+        }
+
+        .dialogue-entry {
+            margin-bottom: 2rem;
+            padding: 1.5rem;
+            border-radius: 12px;
+            background: #f8f9fa;
+            border-left: 4px solid;
+            animation: fadeIn 0.5s ease;
+        }
+
+        .dialogue-entry.pairing-1 {
+            border-left-color: #667eea;
+            background: linear-gradient(to right, rgba(102, 126, 234, 0.05), transparent);
+        }
+
+        .dialogue-entry.pairing-2 {
+            border-left-color: #764ba2;
+            background: linear-gradient(to right, rgba(118, 75, 162, 0.05), transparent);
+        }
+
+        .speaker-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1rem;
+            font-weight: bold;
+            color: #2c3e50;
+        }
+
+        .speaker-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 1rem;
+            font-size: 1.2rem;
+            color: white;
+        }
+
+        .pairing-1 .speaker-icon {
+            background: linear-gradient(135deg, #667eea 0%, #5a67d8 100%);
+        }
+
+        .pairing-2 .speaker-icon {
+            background: linear-gradient(135deg, #764ba2 0%, #663a82 100%);
+        }
+
+        .speaker-name {
+            font-size: 1.1rem;
+        }
+
+        .speaker-role {
+            font-size: 0.85rem;
+            opacity: 0.7;
+            margin-left: 0.5rem;
+            font-style: italic;
+        }
+
+        .dialogue-text {
+            color: #34495e;
+            line-height: 1.8;
+            font-size: 1.05rem;
+        }
+
+        .dialogue-text p {
+            margin-bottom: 1rem;
+        }
+
+        .dialogue-text p:last-child {
+            margin-bottom: 0;
+        }
+
+        .loading-indicator {
+            display: none;
+            text-align: center;
+            padding: 2rem;
+            font-style: italic;
+            color: #6c757d;
+        }
+
+        .loading-indicator.active {
+            display: block;
+        }
+
+        .loading-dots {
+            display: inline-block;
+            animation: loadingDots 1.4s infinite;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes loadingDots {
+            0%, 20% {
+                content: '.';
+            }
+            40% {
+                content: '..';
+            }
+            60%, 100% {
+                content: '...';
+            }
+        }
+
+        .error-message {
+            background: #f8d7da;
+            color: #721c24;
+            padding: 1rem;
+            border-radius: 8px;
+            margin: 1rem 2rem;
+            border: 1px solid #f5c6cb;
+        }
+
+        /* Speechify optimization */
+        .dialogue-container article {
+            speak: literal-punctuation;
+        }
+
+        /* Responsive design */
+        @media (max-width: 768px) {
+            .setup-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            h1 {
+                font-size: 1.8rem;
+            }
+            
+            .container {
+                margin: 0;
+                border-radius: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Philosophical Dialogues Through Literary Voices</h1>
+            <p class="subtitle">Where timeless wisdom meets narrative artistry</p>
+        </header>
+
+        <div class="setup-panel">
+            <div class="setup-grid">
+                <div class="pairing-card">
+                    <span class="pairing-number">1</span>
+                    <div class="form-group">
+                        <label for="philosopher1">Philosopher</label>
+                        <select id="philosopher1">
+                            <option value="socrates">Socrates - The Questioner</option>
+                            <option value="aristotle">Aristotle - The Systematizer</option>
+                            <option value="marcus_aurelius">Marcus Aurelius - The Stoic Emperor</option>
+                            <option value="descartes">René Descartes - The Doubter</option>
+                            <option value="kant">Immanuel Kant - The Critical Idealist</option>
+                            <option value="nietzsche">Friedrich Nietzsche - The Iconoclast</option>
+                            <option value="wittgenstein">Ludwig Wittgenstein - The Language Analyst</option>
+                            <option value="simone_de_beauvoir">Simone de Beauvoir - The Existentialist Feminist</option>
+                            <option value="confucius">Confucius - The Social Harmonizer</option>
+                            <option value="lao_tzu">Lao Tzu - The Way Finder</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="author1">Literary Voice</label>
+                        <select id="author1">
+                            <option value="hemingway">Ernest Hemingway - Sparse & Direct</option>
+                            <option value="woolf">Virginia Woolf - Stream of Consciousness</option>
+                            <option value="tolkien">J.R.R. Tolkien - Epic & Mythical</option>
+                            <option value="austen">Jane Austen - Witty & Social</option>
+                            <option value="kafka">Franz Kafka - Surreal & Anxious</option>
+                            <option value="morrison">Toni Morrison - Lyrical & Profound</option>
+                            <option value="borges">Jorge Luis Borges - Labyrinthine & Meta</option>
+                            <option value="leguin">Ursula K. Le Guin - Speculative & Wise</option>
+                            <option value="murakami">Haruki Murakami - Dreamlike & Modern</option>
+                            <option value="atwood">Margaret Atwood - Sharp & Dystopian</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="model1">LLM Model</label>
+                        <select id="model1">
+                            <option value="llama3.2:3b">Llama 3.2 3B (Fast)</option>
+                            <option value="mistral:7b">Mistral 7B (Balanced)</option>
+                            <option value="deepseek-r1:7b">DeepSeek R1 7B (Reasoning)</option>
+                            <option value="qwen2.5:7b">Qwen 2.5 7B (Versatile)</option>
+                            <option value="gemma2:9b">Gemma 2 9B (Google)</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="pairing-card">
+                    <span class="pairing-number">2</span>
+                    <div class="form-group">
+                        <label for="philosopher2">Philosopher</label>
+                        <select id="philosopher2">
+                            <option value="plato">Plato - The Idealist</option>
+                            <option value="epicurus">Epicurus - The Hedonist Sage</option>
+                            <option value="spinoza">Baruch Spinoza - The God-Intoxicated</option>
+                            <option value="hume">David Hume - The Skeptical Empiricist</option>
+                            <option value="kierkegaard">Søren Kierkegaard - The Leap Taker</option>
+                            <option value="sartre">Jean-Paul Sartre - The Freedom Proclaimer</option>
+                            <option value="hannah_arendt">Hannah Arendt - The Political Thinker</option>
+                            <option value="buddha">Siddhartha Gautama - The Awakened One</option>
+                            <option value="rumi">Rumi - The Mystic Poet</option>
+                            <option value="martha_nussbaum">Martha Nussbaum - The Capability Theorist</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="author2">Literary Voice</label>
+                        <select id="author2">
+                            <option value="dickens">Charles Dickens - Victorian & Verbose</option>
+                            <option value="garcia_marquez">Gabriel García Márquez - Magical Realist</option>
+                            <option value="vonnegut">Kurt Vonnegut - Satirical & Humane</option>
+                            <option value="wilde">Oscar Wilde - Witty & Paradoxical</option>
+                            <option value="joyce">James Joyce - Experimental & Dense</option>
+                            <option value="baldwin">James Baldwin - Urgent & Eloquent</option>
+                            <option value="calvino">Italo Calvino - Playful & Philosophical</option>
+                            <option value="ishiguro">Kazuo Ishiguro - Subtle & Restrained</option>
+                            <option value="pynchon">Thomas Pynchon - Paranoid & Complex</option>
+                            <option value="butler">Octavia Butler - Visionary & Grounded</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="model2">LLM Model</label>
+                        <select id="model2">
+                            <option value="llama3.2:3b">Llama 3.2 3B (Fast)</option>
+                            <option value="mistral:7b">Mistral 7B (Balanced)</option>
+                            <option value="deepseek-r1:7b">DeepSeek R1 7B (Reasoning)</option>
+                            <option value="qwen2.5:7b">Qwen 2.5 7B (Versatile)</option>
+                            <option value="gemma2:9b">Gemma 2 9B (Google)</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <div class="topic-section">
+                <div class="form-group">
+                    <label for="topic">Discussion Topic</label>
+                    <input type="text" id="topic" placeholder="e.g., The nature of consciousness in the age of artificial intelligence">
+                </div>
+                <div class="button-group">
+                    <button id="startBtn">Begin Dialogue</button>
+                    <button id="continueBtn" style="display: none;">Continue Conversation</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="dialogue-container" id="dialogueContainer">
+            <div class="loading-indicator" id="loadingIndicator">
+                <p>Philosophers are gathering their thoughts<span class="loading-dots">...</span></p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        class PhilosophicalDialogue {
+            constructor() {
+                this.conversationHistory = [];
+                this.currentTurn = 0;
+                this.isGenerating = false;
+                
+                this.startBtn = document.getElementById('startBtn');
+                this.continueBtn = document.getElementById('continueBtn');
+                this.dialogueContainer = document.getElementById('dialogueContainer');
+                this.loadingIndicator = document.getElementById('loadingIndicator');
+                
+                this.startBtn.addEventListener('click', () => this.startDialogue());
+                this.continueBtn.addEventListener('click', () => this.continueDialogue());
+            }
+
+            getFormData() {
+                return {
+                    philosopher1: document.getElementById('philosopher1').value,
+                    author1: document.getElementById('author1').value,
+                    model1: document.getElementById('model1').value,
+                    philosopher2: document.getElementById('philosopher2').value,
+                    author2: document.getElementById('author2').value,
+                    model2: document.getElementById('model2').value,
+                    topic: document.getElementById('topic').value
+                };
+            }
+
+            async startDialogue() {
+                const data = this.getFormData();
+                
+                if (!data.topic) {
+                    alert('Please enter a discussion topic');
+                    return;
+                }
+
+                this.conversationHistory = [];
+                this.currentTurn = 0;
+                this.dialogueContainer.innerHTML = '';
+                
+                this.startBtn.disabled = true;
+                this.continueBtn.style.display = 'none';
+                this.loadingIndicator.classList.add('active');
+                
+                try {
+                    await this.generateDialogue(data, true);
+                    this.continueBtn.style.display = 'inline-block';
+                } catch (error) {
+                    this.showError('Failed to start dialogue: ' + error.message);
+                } finally {
+                    this.startBtn.disabled = false;
+                    this.loadingIndicator.classList.remove('active');
+                }
+            }
+
+            async continueDialogue() {
+                const data = this.getFormData();
+                
+                this.continueBtn.disabled = true;
+                this.loadingIndicator.classList.add('active');
+                
+                try {
+                    await this.generateDialogue(data, false);
+                } catch (error) {
+                    this.showError('Failed to continue dialogue: ' + error.message);
+                } finally {
+                    this.continueBtn.disabled = false;
+                    this.loadingIndicator.classList.remove('active');
+                }
+            }
+
+            async generateDialogue(data, isStart) {
+                const response = await fetch('/generate', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({
+                        ...data,
+                        history: this.conversationHistory,
+                        isStart: isStart
+                    })
+                });
+
+                if (!response.ok) {
+                    throw new Error('Server error');
+                }
+
+                const reader = response.body.getReader();
+                const decoder = new TextDecoder();
+                
+                while (true) {
+                    const { done, value } = await reader.read();
+                    if (done) break;
+                    
+                    const chunk = decoder.decode(value, { stream: true });
+                    const lines = chunk.split('\n');
+                    
+                    for (const line of lines) {
+                        if (line.startsWith('data: ')) {
+                            try {
+                                const data = JSON.parse(line.slice(6));
+                                if (data.type === 'message') {
+                                    this.addDialogueEntry(data);
+                                    this.conversationHistory.push(data);
+                                }
+                            } catch (e) {
+                                console.error('Failed to parse SSE data:', e);
+                            }
+                        }
+                    }
+                }
+            }
+
+            addDialogueEntry(data) {
+                const entry = document.createElement('article');
+                entry.className = `dialogue-entry pairing-${data.pairing}`;
+                
+                const philosopherName = this.getPhilosopherDisplayName(data.philosopher);
+                const authorName = this.getAuthorDisplayName(data.author);
+                
+                entry.innerHTML = `
+                    <div class="speaker-header">
+                        <div class="speaker-icon">${data.pairing === 1 ? '1' : '2'}</div>
+                        <div>
+                            <span class="speaker-name">${philosopherName}</span>
+                            <span class="speaker-role">through ${authorName}</span>
+                        </div>
+                    </div>
+                    <div class="dialogue-text">
+                        ${data.content}
+                    </div>
+                `;
+                
+                this.dialogueContainer.appendChild(entry);
+                entry.scrollIntoView({ behavior: 'smooth', block: 'end' });
+            }
+
+            getPhilosopherDisplayName(value) {
+                const names = {
+                    'socrates': 'Socrates',
+                    'plato': 'Plato',
+                    'aristotle': 'Aristotle',
+                    'marcus_aurelius': 'Marcus Aurelius',
+                    'epicurus': 'Epicurus',
+                    'spinoza': 'Baruch Spinoza',
+                    'descartes': 'René Descartes',
+                    'hume': 'David Hume',
+                    'kant': 'Immanuel Kant',
+                    'kierkegaard': 'Søren Kierkegaard',
+                    'nietzsche': 'Friedrich Nietzsche',
+                    'sartre': 'Jean-Paul Sartre',
+                    'wittgenstein': 'Ludwig Wittgenstein',
+                    'hannah_arendt': 'Hannah Arendt',
+                    'simone_de_beauvoir': 'Simone de Beauvoir',
+                    'buddha': 'Siddhartha Gautama',
+                    'confucius': 'Confucius',
+                    'lao_tzu': 'Lao Tzu',
+                    'rumi': 'Rumi',
+                    'martha_nussbaum': 'Martha Nussbaum'
+                };
+                return names[value] || value;
+            }
+
+            getAuthorDisplayName(value) {
+                const names = {
+                    'hemingway': 'Hemingway',
+                    'woolf': 'Woolf',
+                    'tolkien': 'Tolkien',
+                    'austen': 'Austen',
+                    'dickens': 'Dickens',
+                    'kafka': 'Kafka',
+                    'garcia_marquez': 'García Márquez',
+                    'vonnegut': 'Vonnegut',
+                    'wilde': 'Wilde',
+                    'joyce': 'Joyce',
+                    'morrison': 'Morrison',
+                    'baldwin': 'Baldwin',
+                    'borges': 'Borges',
+                    'calvino': 'Calvino',
+                    'leguin': 'Le Guin',
+                    'ishiguro': 'Ishiguro',
+                    'murakami': 'Murakami',
+                    'pynchon': 'Pynchon',
+                    'atwood': 'Atwood',
+                    'butler': 'Butler'
+                };
+                return names[value] || value;
+            }
+
+            showError(message) {
+                const errorDiv = document.createElement('div');
+                errorDiv.className = 'error-message';
+                errorDiv.textContent = message;
+                this.dialogueContainer.appendChild(errorDiv);
+            }
+        }
+
+        // Initialize the application
+        document.addEventListener('DOMContentLoaded', () => {
+            new PhilosophicalDialogue();
+        });
+    </script>
+</body>
+</html>

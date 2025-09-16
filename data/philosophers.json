@@ -1,0 +1,162 @@
+{
+  "socrates": {
+    "name": "Socrates",
+    "era": "Ancient Greek (470-399 BCE)",
+    "key_concepts": ["know thyself", "examined life", "virtue as knowledge", "dialectical method"],
+    "beliefs": "wisdom through acknowledging ignorance, moral virtue, divine inner voice",
+    "style": "questioning, ironic, humble yet penetrating",
+    "epithet": "The Questioner"
+  },
+  "plato": {
+    "name": "Plato",
+    "era": "Ancient Greek (428-348 BCE)",
+    "key_concepts": ["theory of Forms", "ideal state", "philosopher kings", "allegory of the cave"],
+    "beliefs": "eternal Forms, tripartite soul, justice as harmony",
+    "style": "idealistic, systematic, metaphorical",
+    "epithet": "The Idealist"
+  },
+  "aristotle": {
+    "name": "Aristotle",
+    "era": "Ancient Greek (384-322 BCE)",
+    "key_concepts": ["golden mean", "eudaimonia", "potentiality and actuality", "four causes"],
+    "beliefs": "virtue ethics, teleology, logic as tool for truth",
+    "style": "systematic, empirical, categorizing",
+    "epithet": "The Systematizer"
+  },
+  "marcus_aurelius": {
+    "name": "Marcus Aurelius",
+    "era": "Roman (121-180 CE)",
+    "key_concepts": ["stoic virtue", "cosmic perspective", "present moment", "duty"],
+    "beliefs": "stoicism, universal reason, acceptance of fate",
+    "style": "personal, practical, contemplative",
+    "epithet": "The Stoic Emperor"
+  },
+  "epicurus": {
+    "name": "Epicurus",
+    "era": "Hellenistic Greek (341-270 BCE)",
+    "key_concepts": ["ataraxia", "absence of pain", "friendship", "atomic theory"],
+    "beliefs": "pleasure as absence of suffering, mortality acceptance",
+    "style": "gentle, reassuring, practical",
+    "epithet": "The Hedonist Sage"
+  },
+  "buddha": {
+    "name": "Siddhartha Gautama (Buddha)",
+    "era": "Ancient Indian (563-483 BCE)",
+    "key_concepts": ["four noble truths", "eightfold path", "non-self", "dependent origination"],
+    "beliefs": "middle way, liberation from suffering",
+    "style": "compassionate, practical, metaphorical",
+    "epithet": "The Awakened One"
+  },
+  "confucius": {
+    "name": "Confucius",
+    "era": "Ancient Chinese (551-479 BCE)",
+    "key_concepts": ["ren", "li", "junzi", "rectification of names"],
+    "beliefs": "social harmony, filial piety, moral cultivation",
+    "style": "practical, social, virtue-focused",
+    "epithet": "The Social Harmonizer"
+  },
+  "lao_tzu": {
+    "name": "Lao Tzu",
+    "era": "Ancient Chinese (6th century BCE)",
+    "key_concepts": ["dao", "wu wei", "yin yang", "simplicity"],
+    "beliefs": "natural way, non-action, return to simplicity",
+    "style": "paradoxical, poetic, mystical",
+    "epithet": "The Way Finder"
+  },
+  "spinoza": {
+    "name": "Baruch Spinoza",
+    "era": "17th century (1632-1677)",
+    "key_concepts": ["substance monism", "God or Nature", "emotions as confused ideas", "necessity"],
+    "beliefs": "determinism, intellectual love of God, freedom through understanding",
+    "style": "geometric, rigorous, systematic",
+    "epithet": "The God-Intoxicated"
+  },
+  "descartes": {
+    "name": "René Descartes",
+    "era": "17th century (1596-1650)",
+    "key_concepts": ["cogito ergo sum", "methodical doubt", "mind-body dualism", "clear and distinct ideas"],
+    "beliefs": "rationalism, mathematical certainty in philosophy",
+    "style": "methodical, skeptical progressing to certainty",
+    "epithet": "The Doubter"
+  },
+  "hume": {
+    "name": "David Hume",
+    "era": "18th century Scottish (1711-1776)",
+    "key_concepts": ["impressions and ideas", "bundle theory", "is-ought problem", "miracles critique"],
+    "beliefs": "empiricism, sentiment over reason in morality",
+    "style": "skeptical, witty, empirical",
+    "epithet": "The Skeptical Empiricist"
+  },
+  "kant": {
+    "name": "Immanuel Kant",
+    "era": "18th century German (1724-1804)",
+    "key_concepts": ["categorical imperative", "synthetic a priori", "phenomena/noumena", "transcendental idealism"],
+    "beliefs": "moral duty, limits of reason, human dignity",
+    "style": "systematic, precise, architectonic",
+    "epithet": "The Critical Idealist"
+  },
+  "kierkegaard": {
+    "name": "Søren Kierkegaard",
+    "era": "19th century Danish (1813-1855)",
+    "key_concepts": ["leap of faith", "anxiety", "stages of life", "subjective truth"],
+    "beliefs": "Christian existentialism, individual over system",
+    "style": "passionate, paradoxical, literary",
+    "epithet": "The Leap Taker"
+  },
+  "nietzsche": {
+    "name": "Friedrich Nietzsche",
+    "era": "19th century German (1844-1900)",
+    "key_concepts": ["will to power", "eternal recurrence", "übermensch", "master/slave morality"],
+    "beliefs": "life affirmation, critique of Christianity, perspectivism",
+    "style": "aphoristic, provocative, poetic",
+    "epithet": "The Iconoclast"
+  },
+  "wittgenstein": {
+    "name": "Ludwig Wittgenstein",
+    "era": "20th century Austrian-British (1889-1951)",
+    "key_concepts": ["language games", "forms of life", "showing vs saying", "private language"],
+    "beliefs": "meaning as use, philosophy as therapy",
+    "style": "precise, enigmatic, therapeutic",
+    "epithet": "The Language Analyst"
+  },
+  "sartre": {
+    "name": "Jean-Paul Sartre",
+    "era": "20th century French (1905-1980)",
+    "key_concepts": ["existence precedes essence", "bad faith", "radical freedom", "the Look"],
+    "beliefs": "atheistic existentialism, condemned to freedom",
+    "style": "phenomenological, dramatic, engaged",
+    "epithet": "The Freedom Proclaimer"
+  },
+  "de_beauvoir": {
+    "name": "Simone de Beauvoir",
+    "era": "20th century French (1908-1986)",
+    "key_concepts": ["situated freedom", "ethics of ambiguity", "woman as Other", "bad faith"],
+    "beliefs": "existentialist feminism, ethics of liberation",
+    "style": "phenomenological, feminist, engaged",
+    "epithet": "The Existentialist Feminist"
+  },
+  "arendt": {
+    "name": "Hannah Arendt",
+    "era": "20th century German-American (1906-1975)",
+    "key_concepts": ["banality of evil", "vita activa", "public/private", "plurality"],
+    "beliefs": "importance of political action, thinking without banisters",
+    "style": "analytical, historical, politically engaged",
+    "epithet": "The Political Thinker"
+  },
+  "rumi": {
+    "name": "Rumi",
+    "era": "13th century Persian (1207-1273)",
+    "key_concepts": ["divine love", "whirling", "unity", "spiritual intoxication"],
+    "beliefs": "Sufi mysticism, love as path to divine",
+    "style": "ecstatic, poetic, mystical",
+    "epithet": "The Mystic Poet"
+  },
+  "martha_nussbaum": {
+    "name": "Martha Nussbaum",
+    "era": "Contemporary American (1947-)",
+    "key_concepts": ["capabilities approach", "fragility of goodness", "political emotions", "cosmopolitanism"],
+    "beliefs": "human dignity, emotions in ethics, global justice",
+    "style": "analytical, humanistic, interdisciplinary",
+    "epithet": "The Capability Theorist"
+  }
+}

@@ -1,0 +1,142 @@
+{
+  "austen": {
+    "name": "Jane Austen",
+    "era": "Classical",
+    "characteristics": "free indirect discourse, social observation, wit, irony",
+    "voice": "satirical, mannered, precise, socially astute",
+    "epithet": "Witty & Social"
+  },
+  "dickens": {
+    "name": "Charles Dickens",
+    "era": "Victorian",
+    "characteristics": "elaborate descriptions, sentiment, social criticism, memorable characters",
+    "voice": "Victorian, expansive, moralistic, humorous",
+    "epithet": "Victorian & Verbose"
+  },
+  "wilde": {
+    "name": "Oscar Wilde",
+    "era": "Victorian",
+    "characteristics": "epigrams, paradoxes, aestheticism, wit",
+    "voice": "witty, decadent, paradoxical, sophisticated",
+    "epithet": "Witty & Paradoxical"
+  },
+  "hemingway": {
+    "name": "Ernest Hemingway",
+    "era": "Modernist",
+    "characteristics": "short sentences, simple words, concrete imagery, iceberg theory",
+    "voice": "direct, understated, masculine, journalistic",
+    "epithet": "Sparse & Direct"
+  },
+  "woolf": {
+    "name": "Virginia Woolf",
+    "era": "Modernist",
+    "characteristics": "stream of consciousness, long flowing sentences, interior monologue, time fluidity",
+    "voice": "lyrical, introspective, modernist, feminist",
+    "epithet": "Stream of Consciousness"
+  },
+  "joyce": {
+    "name": "James Joyce",
+    "era": "Modernist",
+    "characteristics": "stream of consciousness, experimental, mythic parallels, language play",
+    "voice": "modernist, Irish, complex, revolutionary",
+    "epithet": "Experimental & Dense"
+  },
+  "kafka": {
+    "name": "Franz Kafka",
+    "era": "Modernist",
+    "characteristics": "surreal situations, bureaucratic nightmares, alienation, ambiguity",
+    "voice": "anxious, precise, dreamlike, oppressive",
+    "epithet": "Surreal & Anxious"
+  },
+  "tolkien": {
+    "name": "J.R.R. Tolkien",
+    "era": "Mid-20th Century",
+    "characteristics": "elevated language, world-building detail, mythic scope, linguistic richness",
+    "voice": "epic, archaic touches, moral clarity, eucatastrophe",
+    "epithet": "Epic & Mythical"
+  },
+  "vonnegut": {
+    "name": "Kurt Vonnegut",
+    "era": "Mid-20th Century",
+    "characteristics": "simple syntax, dark humor, science fiction elements, fatalism",
+    "voice": "sardonic, humane, anti-war, accessible",
+    "epithet": "Satirical & Humane"
+  },
+  "borges": {
+    "name": "Jorge Luis Borges",
+    "era": "Mid-20th Century",
+    "characteristics": "labyrinths, mirrors, infinite recursion, scholarly tone",
+    "voice": "erudite, metaphysical, playful, mysterious",
+    "epithet": "Labyrinthine & Meta"
+  },
+  "marquez": {
+    "name": "Gabriel García Márquez",
+    "era": "Mid-20th Century",
+    "characteristics": "magical realism, cyclical time, lush descriptions, myth blending",
+    "voice": "sensual, fantastical, political, Latin American",
+    "epithet": "Magical Realist"
+  },
+  "baldwin": {
+    "name": "James Baldwin",
+    "era": "Mid-20th Century",
+    "characteristics": "passionate rhetoric, long sentences, biblical cadence, moral urgency",
+    "voice": "prophetic, eloquent, confrontational, compassionate",
+    "epithet": "Urgent & Eloquent"
+  },
+  "calvino": {
+    "name": "Italo Calvino",
+    "era": "Mid-20th Century",
+    "characteristics": "lightness, multiplicity, metafiction, combinatorial",
+    "voice": "playful, philosophical, fantastical, precise",
+    "epithet": "Playful & Philosophical"
+  },
+  "morrison": {
+    "name": "Toni Morrison",
+    "era": "Contemporary",
+    "characteristics": "lyrical prose, nonlinear narrative, African American experience, memory",
+    "voice": "poetic, haunting, politically engaged, spiritual",
+    "epithet": "Lyrical & Profound"
+  },
+  "le_guin": {
+    "name": "Ursula K. Le Guin",
+    "era": "Contemporary",
+    "characteristics": "anthropological depth, gender exploration, ecological themes, clarity",
+    "voice": "wise, speculative, feminist, Taoist-influenced",
+    "epithet": "Speculative & Wise"
+  },
+  "murakami": {
+    "name": "Haruki Murakami",
+    "era": "Contemporary",
+    "characteristics": "surreal elements, parallel worlds, jazz references, alienation",
+    "voice": "dreamlike, contemporary, Japanese-Western fusion",
+    "epithet": "Dreamlike & Modern"
+  },
+  "ishiguro": {
+    "name": "Kazuo Ishiguro",
+    "era": "Contemporary",
+    "characteristics": "unreliable narrators, emotional restraint, memory, subtle reveals",
+    "voice": "understated, melancholic, precise, haunting",
+    "epithet": "Subtle & Restrained"
+  },
+  "atwood": {
+    "name": "Margaret Atwood",
+    "era": "Contemporary",
+    "characteristics": "dystopian elements, feminist themes, environmental concerns, sharp prose",
+    "voice": "incisive, speculative, Canadian, politically aware",
+    "epithet": "Sharp & Dystopian"
+  },
+  "butler": {
+    "name": "Octavia Butler",
+    "era": "Contemporary",
+    "characteristics": "Afrofuturism, power dynamics, biological themes, survival",
+    "voice": "visionary, grounded, African American, transformative",
+    "epithet": "Visionary & Grounded"
+  },
+  "pynchon": {
+    "name": "Thomas Pynchon",
+    "era": "Contemporary",
+    "characteristics": "paranoia, encyclopedic, conspiracy, entropy",
+    "voice": "complex, paranoid, satirical, postmodern",
+    "epithet": "Paranoid & Complex"
+  }
+}
