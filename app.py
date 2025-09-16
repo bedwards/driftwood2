@@ -4,6 +4,7 @@ Philosophical Dialogue System - Flask/SocketIO Backend
 Dual-view synchronized dialogue generation with local LLM inference
 """
 
+import os
 import json
 import uuid
 import time
@@ -267,7 +268,7 @@ class DialogueGenerator:
     """Handles dialogue generation with Ollama integration"""
     
     def __init__(self):
-        self.ollama_url = "http://localhost:11434"
+        self.ollama_url = os.getenv("OLLAMA_HOST", "http://localhost:11434")
         
     def create_prompt(self, philosopher: str, author: str, topic: str, 
                      history: List[Dict], is_response: bool = False) -> str:
