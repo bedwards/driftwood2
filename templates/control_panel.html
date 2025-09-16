@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Philosophical Dialogue System - Control Panel</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/control.css') }}">
+</head>
+<body>
+    <div class="control-container">
+        <header class="header">
+            <h1>🎭 Philosophical Dialogue System</h1>
+            <p class="subtitle">Where Philosophy Meets Literature</p>
+        </header>
+
+        <main class="control-panel">
+            <div class="configuration-section">
+                <h2>Configure Your Dialogue</h2>
+                
+                <div class="pairing-grid">
+                    <!-- Philosopher 1 Configuration -->
+                    <div class="pairing-card philosopher-1">
+                        <h3>First Voice</h3>
+                        
+                        <div class="form-group">
+                            <label for="philosopher1">Philosopher</label>
+                            <select id="philosopher1" class="philosopher-select">
+                                <option value="">Select a philosopher...</option>
+                                <optgroup label="Ancient & Classical">
+                                    <option value="socrates">Socrates - The Questioner</option>
+                                    <option value="plato">Plato - The Idealist</option>
+                                    <option value="aristotle">Aristotle - The Systematizer</option>
+                                    <option value="marcus_aurelius">Marcus Aurelius - The Stoic Emperor</option>
+                                    <option value="buddha">Buddha - The Awakened One</option>
+                                    <option value="confucius">Confucius - The Social Harmonizer</option>
+                                </optgroup>
+                                <optgroup label="Modern">
+                                    <option value="descartes">Descartes - The Doubter</option>
+                                    <option value="hume">Hume - The Skeptical Empiricist</option>
+                                    <option value="kant">Kant - The Critical Idealist</option>
+                                    <option value="kierkegaard">Kierkegaard - The Leap Taker</option>
+                                    <option value="nietzsche">Nietzsche - The Iconoclast</option>
+                                </optgroup>
+                                <optgroup label="Contemporary">
+                                    <option value="wittgenstein">Wittgenstein - The Language Analyst</option>
+                                    <option value="sartre">Sartre - The Freedom Proclaimer</option>
+                                    <option value="de_beauvoir">de Beauvoir - The Existentialist Feminist</option>
+                                    <option value="arendt">Arendt - The Political Thinker</option>
+                                </optgroup>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="author1">Literary Voice</label>
+                            <select id="author1" class="author-select">
+                                <option value="">Select an author...</option>
+                                <optgroup label="Classical & Victorian">
+                                    <option value="austen">Jane Austen - Witty & Social</option>
+                                    <option value="dickens">Charles Dickens - Victorian & Expansive</option>
+                                    <option value="wilde">Oscar Wilde - Paradoxical & Brilliant</option>
+                                </optgroup>
+                                <optgroup label="Modernist">
+                                    <option value="hemingway">Ernest Hemingway - Sparse & Direct</option>
+                                    <option value="woolf">Virginia Woolf - Stream of Consciousness</option>
+                                    <option value="joyce">James Joyce - Experimental & Dense</option>
+                                    <option value="kafka">Franz Kafka - Surreal & Anxious</option>
+                                </optgroup>
+                                <optgroup label="Mid-20th Century">
+                                    <option value="tolkien">J.R.R. Tolkien - Epic & Mythical</option>
+                                    <option value="vonnegut">Kurt Vonnegut - Satirical & Humane</option>
+                                    <option value="borges">Jorge Luis Borges - Labyrinthine & Meta</option>
+                                    <option value="marquez">Gabriel García Márquez - Magical Realist</option>
+                                    <option value="baldwin">James Baldwin - Urgent & Eloquent</option>
+                                    <option value="calvino">Italo Calvino - Playful & Philosophical</option>
+                                </optgroup>
+                                <optgroup label="Contemporary">
+                                    <option value="morrison">Toni Morrison - Lyrical & Profound</option>
+                                    <option value="le_guin">Ursula K. Le Guin - Speculative & Wise</option>
+                                    <option value="murakami">Haruki Murakami - Dreamlike & Modern</option>
+                                    <option value="ishiguro">Kazuo Ishiguro - Subtle & Restrained</option>
+                                    <option value="atwood">Margaret Atwood - Sharp & Dystopian</option>
+                                    <option value="butler">Octavia Butler - Visionary & Grounded</option>
+                                    <option value="pynchon">Thomas Pynchon - Paranoid & Complex</option>
+                                </optgroup>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="model1">AI Model</label>
+                            <select id="model1" class="model-select">
+                                <option value="llama3.2:3b">Llama 3.2 (3B) - Fast & Light</option>
+                                <option value="mistral:7b" selected>Mistral (7B) - Balanced</option>
+                                <option value="qwen2.5:7b">Qwen 2.5 (7B) - Versatile</option>
+                                <option value="gemma2:9b">Gemma 2 (9B) - High Quality</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <!-- Philosopher 2 Configuration -->
+                    <div class="pairing-card philosopher-2">
+                        <h3>Second Voice</h3>
+                        
+                        <div class="form-group">
+                            <label for="philosopher2">Philosopher</label>
+                            <select id="philosopher2" class="philosopher-select">
+                                <option value="">Select a philosopher...</option>
+                                <optgroup label="Ancient & Classical">
+                                    <option value="socrates">Socrates - The Questioner</option>
+                                    <option value="plato">Plato - The Idealist</option>
+                                    <option value="aristotle">Aristotle - The Systematizer</option>
+                                    <option value="marcus_aurelius">Marcus Aurelius - The Stoic Emperor</option>
+                                    <option value="buddha">Buddha - The Awakened One</option>
+                                    <option value="confucius">Confucius - The Social Harmonizer</option>
+                                </optgroup>
+                                <optgroup label="Modern">
+                                    <option value="descartes">Descartes - The Doubter</option>
+                                    <option value="hume">Hume - The Skeptical Empiricist</option>
+                                    <option value="kant">Kant - The Critical Idealist</option>
+                                    <option value="kierkegaard">Kierkegaard - The Leap Taker</option>
+                                    <option value="nietzsche">Nietzsche - The Iconoclast</option>
+                                </optgroup>
+                                <optgroup label="Contemporary">
+                                    <option value="wittgenstein">Wittgenstein - The Language Analyst</option>
+                                    <option value="sartre">Sartre - The Freedom Proclaimer</option>
+                                    <option value="de_beauvoir">de Beauvoir - The Existentialist Feminist</option>
+                                    <option value="arendt">Arendt - The Political Thinker</option>
+                                </optgroup>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="author2">Literary Voice</label>
+                            <select id="author2" class="author-select">
+                                <option value="">Select an author...</option>
+                                <optgroup label="Classical & Victorian">
+                                    <option value="austen">Jane Austen - Witty & Social</option>
+                                    <option value="dickens">Charles Dickens - Victorian & Expansive</option>
+                                    <option value="wilde">Oscar Wilde - Paradoxical & Brilliant</option>
+                                </optgroup>
+                                <optgroup label="Modernist">
+                                    <option value="hemingway">Ernest Hemingway - Sparse & Direct</option>
+                                    <option value="woolf">Virginia Woolf - Stream of Consciousness</option>
+                                    <option value="joyce">James Joyce - Experimental & Dense</option>
+                                    <option value="kafka">Franz Kafka - Surreal & Anxious</option>
+                                </optgroup>
+                                <optgroup label="Mid-20th Century">
+                                    <option value="tolkien">J.R.R. Tolkien - Epic & Mythical</option>
+                                    <option value="vonnegut">Kurt Vonnegut - Satirical & Humane</option>
+                                    <option value="borges">Jorge Luis Borges - Labyrinthine & Meta</option>
+                                    <option value="marquez">Gabriel García Márquez - Magical Realist</option>
+                                    <option value="baldwin">James Baldwin - Urgent & Eloquent</option>
+                                    <option value="calvino">Italo Calvino - Playful & Philosophical</option>
+                                </optgroup>
+                                <optgroup label="Contemporary">
+                                    <option value="morrison">Toni Morrison - Lyrical & Profound</option>
+                                    <option value="le_guin">Ursula K. Le Guin - Speculative & Wise</option>
+                                    <option value="murakami">Haruki Murakami - Dreamlike & Modern</option>
+                                    <option value="ishiguro">Kazuo Ishiguro - Subtle & Restrained</option>
+                                    <option value="atwood">Margaret Atwood - Sharp & Dystopian</option>
+                                    <option value="butler">Octavia Butler - Visionary & Grounded</option>
+                                    <option value="pynchon">Thomas Pynchon - Paranoid & Complex</option>
+                                </optgroup>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="model2">AI Model</label>
+                            <select id="model2" class="model-select">
+                                <option value="llama3.2:3b">Llama 3.2 (3B) - Fast & Light</option>
+                                <option value="mistral:7b" selected>Mistral (7B) - Balanced</option>
+                                <option value="qwen2.5:7b">Qwen 2.5 (7B) - Versatile</option>
+                                <option value="gemma2:9b">Gemma 2 (9B) - High Quality</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Topic Input -->
+                <div class="topic-section">
+                    <div class="form-group">
+                        <label for="topic">Discussion Topic</label>
+                        <input type="text" id="topic" class="topic-input" 
+                               placeholder="Enter a philosophical topic (e.g., 'consciousness and artificial intelligence')"
+                               maxlength="200">
+                        <small class="help-text">5-200 characters • Choose a topic that invites philosophical exploration</small>
+                    </div>
+                </div>
+
+                <!-- Control Buttons -->
+                <div class="control-buttons">
+                    <button id="beginDialogue" class="btn btn-primary" disabled>
+                        Begin Dialogue
+                    </button>
+                    <button id="continueDialogue" class="btn btn-secondary" disabled>
+                        Continue Conversation
+                    </button>
+                </div>
+            </div>
+
+            <!-- Status Section -->
+            <div class="status-section" id="statusSection" style="display: none;">
+                <h3>Dialogue Status</h3>
+                <div class="status-content">
+                    <div class="status-indicator">
+                        <span class="status-dot"></span>
+                        <span class="status-text">Initializing...</span>
+                    </div>
+                    <div class="conversation-info">
+                        <p>Conversation ID: <span id="conversationId">-</span></p>
+                        <p>Exchange Count: <span id="exchangeCount">0</span> / 20</p>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <footer class="footer">
+            <p>© 2025 Philosophical Dialogue System • Local AI-Powered Conversations</p>
+        </footer>
+    </div>
+
+    <script src="https://cdn.socket.io/4.5.4/socket.io.min.js"></script>
+    <script src="{{ url_for('static', filename='js/control_panel.js') }}"></script>
+</body>
+</html>

@@ -1,0 +1,353 @@
+/* Philosopher View Styles - Optimized for Speechify */
+
+:root {
+    --text-primary: #2d3748;
+    --text-secondary: #4a5568;
+    --bg-primary: #ffffff;
+    --bg-secondary: #f7fafc;
+    --border-color: #e2e8f0;
+    --shadow-sm: 0 1px 3px rgba(0,0,0,0.12);
+    --shadow-md: 0 4px 6px rgba(0,0,0,0.1);
+    --shadow-lg: 0 10px 15px rgba(0,0,0,0.1);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Georgia, 'Times New Roman', serif;
+    background: var(--primary-gradient);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    line-height: 1.8;
+    font-size: 18px;
+}
+
+/* Dialogue Container */
+.dialogue-container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    background: var(--bg-primary);
+    max-width: 900px;
+    width: 100%;
+    margin: 0 auto;
+    box-shadow: var(--shadow-lg);
+}
+
+/* Header */
+.philosopher-header {
+    background: var(--primary-gradient);
+    color: white;
+    padding: 30px 40px;
+    box-shadow: var(--shadow-md);
+}
+
+.identity-section {
+    margin-bottom: 20px;
+}
+
+.philosopher-name {
+    font-size: 2.2rem;
+    font-weight: 700;
+    margin-bottom: 5px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+    letter-spacing: -0.5px;
+}
+
+.author-voice {
+    font-size: 1.1rem;
+    font-style: italic;
+    opacity: 0.95;
+    margin-bottom: 15px;
+}
+
+/* Status Section */
+.status-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.other-speaker-status {
+    flex: 1;
+}
+
+.thinking-indicator {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(255, 255, 255, 0.2);
+    padding: 8px 15px;
+    border-radius: 20px;
+    backdrop-filter: blur(10px);
+}
+
+.thinking-dot {
+    width: 8px;
+    height: 8px;
+    background: white;
+    border-radius: 50%;
+    opacity: 0.3;
+    animation: thinking 1.4s infinite;
+}
+
+.thinking-dot:nth-child(2) { animation-delay: 0.2s; }
+.thinking-dot:nth-child(3) { animation-delay: 0.4s; }
+
+@keyframes thinking {
+    0%, 60%, 100% { opacity: 0.3; }
+    30% { opacity: 1; }
+}
+
+.thinking-text {
+    font-size: 0.9rem;
+    margin-left: 5px;
+}
+
+.connection-status {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.9rem;
+}
+
+.connection-dot {
+    width: 8px;
+    height: 8px;
+    background: #48bb78;
+    border-radius: 50%;
+    box-shadow: 0 0 10px rgba(72, 187, 120, 0.5);
+}
+
+/* Main Dialogue Content */
+.dialogue-stream {
+    flex: 1;
+    padding: 40px;
+    overflow-y: auto;
+    background: var(--bg-primary);
+}
+
+/* Welcome Message */
+.welcome-message {
+    text-align: center;
+    color: var(--text-secondary);
+    padding: 60px 20px;
+}
+
+.welcome-message h2 {
+    color: var(--text-primary);
+    margin-bottom: 20px;
+    font-size: 1.8rem;
+}
+
+.welcome-message p {
+    margin: 10px 0;
+    font-size: 1.1rem;
+    font-style: italic;
+}
+
+/* Dialogue Entry - Speechify Optimized */
+.dialogue-entry {
+    margin-bottom: 40px;
+    animation: fadeIn 0.5s ease-in;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.dialogue-entry header {
+    border-left: 4px solid var(--accent-color);
+    padding-left: 20px;
+    margin-bottom: 20px;
+}
+
+.dialogue-entry .philosopher-label {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: var(--accent-color);
+    margin-bottom: 5px;
+}
+
+.dialogue-entry .author-style {
+    font-size: 0.95rem;
+    color: var(--text-secondary);
+    font-style: italic;
+}
+
+.dialogue-content {
+    color: var(--text-primary);
+    line-height: 1.9;
+}
+
+.dialogue-content p {
+    margin-bottom: 18px;
+    text-align: justify;
+    text-indent: 2em;
+}
+
+.dialogue-content p:first-child {
+    text-indent: 0;
+}
+
+/* Ensure proper semantic structure for Speechify */
+.dialogue-content p:first-child::first-letter {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: var(--accent-color);
+    line-height: 1;
+    float: left;
+    margin: 0 5px 0 0;
+}
+
+/* Timestamp */
+.entry-timestamp {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    text-align: right;
+    margin-top: 15px;
+    font-style: italic;
+    opacity: 0.7;
+}
+
+/* Footer */
+.dialogue-footer {
+    background: var(--bg-secondary);
+    padding: 20px 40px;
+    border-top: 1px solid var(--border-color);
+}
+
+.dialogue-info {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+}
+
+.separator {
+    margin: 0 15px;
+    opacity: 0.5;
+}
+
+/* Speechify Notice */
+.speechify-notice {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: var(--accent-color);
+    color: white;
+    padding: 15px 20px;
+    border-radius: 8px;
+    box-shadow: var(--shadow-lg);
+    font-size: 0.9rem;
+    animation: slideUp 0.5s ease-out;
+    z-index: 1000;
+}
+
+@keyframes slideUp {
+    from {
+        transform: translateY(100px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* Scrollbar Styling */
+.dialogue-stream::-webkit-scrollbar {
+    width: 10px;
+}
+
+.dialogue-stream::-webkit-scrollbar-track {
+    background: var(--bg-secondary);
+}
+
+.dialogue-stream::-webkit-scrollbar-thumb {
+    background: var(--accent-color);
+    border-radius: 5px;
+    opacity: 0.7;
+}
+
+.dialogue-stream::-webkit-scrollbar-thumb:hover {
+    opacity: 1;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .philosopher-header {
+        padding: 20px;
+    }
+    
+    .philosopher-name {
+        font-size: 1.8rem;
+    }
+    
+    .dialogue-stream {
+        padding: 20px;
+    }
+    
+    body {
+        font-size: 16px;
+    }
+}
+
+/* Print Styles */
+@media print {
+    body {
+        background: white;
+        color: black;
+    }
+    
+    .philosopher-header,
+    .dialogue-footer,
+    .speechify-notice {
+        display: none;
+    }
+    
+    .dialogue-stream {
+        padding: 0;
+    }
+    
+    .dialogue-entry {
+        page-break-inside: avoid;
+    }
+}
+
+/* Accessibility */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation: none !important;
+        transition: none !important;
+    }
+}
+
+/* High Contrast Mode */
+@media (prefers-contrast: high) {
+    body {
+        background: white;
+    }
+    
+    .dialogue-content {
+        color: black;
+        font-weight: 500;
+    }
+    
+    .philosopher-header {
+        background: var(--accent-color);
+    }
+}

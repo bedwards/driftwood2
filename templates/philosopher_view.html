@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Philosopher {{ philosopher_id }} - Dialogue View</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/philosopher.css') }}">
+    <style>
+        /* Philosopher-specific theming */
+        body.philosopher-1 {
+            --primary-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            --accent-color: #667eea;
+            --thinking-color: #764ba2;
+        }
+        
+        body.philosopher-2 {
+            --primary-gradient: linear-gradient(135deg, #0ba360 0%, #3cba92 100%);
+            --accent-color: #0ba360;
+            --thinking-color: #3cba92;
+        }
+    </style>
+</head>
+<body class="philosopher-{{ philosopher_id }}" data-philosopher-id="{{ philosopher_id }}" data-conversation-id="{{ conversation_id }}">
+    <div class="dialogue-container">
+        <!-- Header -->
+        <header class="philosopher-header">
+            <div class="identity-section">
+                <h1 class="philosopher-name" id="philosopherName">Awaiting Configuration...</h1>
+                <p class="author-voice" id="authorVoice">through the voice of...</p>
+            </div>
+            <div class="status-section">
+                <div class="other-speaker-status" id="otherSpeakerStatus">
+                    <span class="thinking-indicator" style="display: none;">
+                        <span class="thinking-dot"></span>
+                        <span class="thinking-dot"></span>
+                        <span class="thinking-dot"></span>
+                        <span class="thinking-text">The other philosopher is contemplating...</span>
+                    </span>
+                </div>
+                <div class="connection-status">
+                    <span class="connection-dot"></span>
+                    <span id="connectionText">Connecting...</span>
+                </div>
+            </div>
+        </header>
+
+        <!-- Main Dialogue Content -->
+        <main class="dialogue-stream" id="dialogueContent" role="main" aria-label="Philosophical dialogue">
+            <div class="welcome-message">
+                <h2>Welcome to the Philosophical Dialogue</h2>
+                <p>This space will display the philosophical reflections as they unfold.</p>
+                <p>Configure your dialogue in the control panel to begin.</p>
+            </div>
+        </main>
+
+        <!-- Footer -->
+        <footer class="dialogue-footer">
+            <div class="dialogue-info">
+                <span>Exchange <span id="exchangeCount">0</span> of 20</span>
+                <span class="separator">•</span>
+                <span id="timestamp">Awaiting dialogue...</span>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Speechify Optimization Notice -->
+    <div class="speechify-notice" style="display: none;">
+        <p>💡 Tip: Activate Speechify Chrome extension to listen to this philosopher's voice</p>
+    </div>
+
+    <script src="https://cdn.socket.io/4.5.4/socket.io.min.js"></script>
+    <script src="{{ url_for('static', filename='js/dialogue_client.js') }}"></script>
+</body>
+</html>
