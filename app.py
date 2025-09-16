@@ -268,7 +268,14 @@ class DialogueGenerator:
     """Handles dialogue generation with Ollama integration"""
     
     def __init__(self):
-        self.ollama_url = os.getenv("OLLAMA_HOST", "http://localhost:11434")
+        host = os.getenv("OLLAMA_HOST")
+        if host:
+            # if the env var doesn’t start with http:// or https://, prepend http://
+            if not host.startswith(("http://", "https://")):
+                host = f"http://{host}"
+            self.ollama_url = host
+        else:
+            self.ollama_url = "http://localhost:11434"
         
     def create_prompt(self, philosopher: str, author: str, topic: str, 
                      history: List[Dict], is_response: bool = False) -> str:
