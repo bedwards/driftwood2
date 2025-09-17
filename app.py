@@ -276,7 +276,45 @@ class DialogueGenerator:
             self.ollama_url = host
         else:
             self.ollama_url = "http://localhost:11434"
-        
+
+# def create_prompt(self, philosopher: str, author: str, topic: str,
+#                   history: List[Dict], is_response: bool = False) -> str:
+#     phil = PHILOSOPHERS.get(philosopher, {})
+#     auth = AUTHORS.get(author, {})
+
+#     key_concepts = ', '.join(phil.get('key_concepts', []))
+#     beliefs = phil.get('beliefs', '')
+#     style = auth.get('characteristics', '')
+#     voice = auth.get('voice', '')
+
+#     if is_response and history:
+#         last_message = history[-1] if history else None
+#         last_content = last_message.get('content', '')[:500] if last_message else ''
+#         prompt = (
+#             f"Adopt the philosophical stance defined by these ideas: {beliefs}, focusing on concepts such as {key_concepts}. "
+#             f"Respond to the following statement in one to three sentences, using a narrative style characterized by {style} "
+#             f"with a {voice} voice. Avoid naming any philosopher or author and do not reference the author's personal beliefs "
+#             f"or values. Directly answer the previous point and pose a related question or segue to keep the dialogue flowing.\n\n"
+#             f'Previous message: \"{last_content}\"\n'
+#             f'Topic: \"{topic}\"'
+#         )
+#     else:
+#         prompt = (
+#             f"Assume a philosophical stance defined by these ideas: {beliefs}, focusing on concepts such as {key_concepts}. "
+#             f"Use a narrative style described as {style} with a {voice} voice to introduce your perspective on the topic "
+#             f"\"{topic}\" in one to three sentences. Avoid naming any philosopher or author and do not reference the author's "
+#             f"personal beliefs or values. Pose a thoughtful question to invite your dialogue partner to respond."
+#         )
+#     return prompt
+
+# Your philosophical position includes:
+# - Key concepts: {', '.join(phil.get('key_concepts', []))}
+# - Core beliefs: {phil.get('beliefs', '')}
+
+# Writing style characteristics: {auth.get('characteristics', '')}
+# Literary voice: {auth.get('voice', '')}
+
+
     def create_prompt(self, philosopher: str, author: str, topic: str, 
                      history: List[Dict], is_response: bool = False) -> str:
         """Create specialized prompt for dialogue generation"""
@@ -289,22 +327,39 @@ class DialogueGenerator:
             last_message = history[-1] if history else None
             last_content = last_message.get('content', '')[:500] if last_message else ''
             
+            front_matter = """Never mention the name of the philospher. You are not describing
+their views, instead you are embodying them.
+
+Never mention the name of the author. You are not describing
+their views, instead you are embodying them.
+
+Note that of greatest importance is to distingusih that your task is to embody
+    the ideas/stance/arguments/beliefs/values of the philosopher (or likely ideas on the topic)
+    NOT their writing/communication style at all!
+
+Note that of greatest importance is to distingusih that your task is to embody
+    the writing/communication/dialogue style of the author (acting as a character in one of their books might)
+    NOT their ideas/stance/arguments/beliefs/values at all!
+
+Separate components, the philosopher speaking through the author.
+The author studying the philosopher thoroughly and creating a character in one of their novels portraying them covertly.
+
+There is no commentary around the writing, only the content itself. The dialogue is not quoted. There is no narrator or descriptions of setting other than what naturally flows from the conversation.
+
+This is conversational. Brief bursts of dialogue. One to three sentences. Posing questions to each other. Answering the others questions and moving on with a believable and interesting segue.
+"""
+
             prompt = f"""You are {phil.get('name', philosopher)}, the {phil.get('era', '')} philosopher.
-Express your philosophical ideas through {auth.get('name', author)}'s literary style.
+Express your philosophical ideas through the author {auth.get('name', author)}'s literary style.
 
-Your philosophical position includes:
-- Key concepts: {', '.join(phil.get('key_concepts', []))}
-- Core beliefs: {phil.get('beliefs', '')}
-
-Writing style characteristics: {auth.get('characteristics', '')}
-Literary voice: {auth.get('voice', '')}
+{front_matter}
 
 Previous statement to respond to:
 "{last_content}"
 
 Topic: "{topic}"
 
-Respond in 2-3 paragraphs that:
+Respond in 2-3 sentences that:
 1. Engage directly with the previous philosophical position
 2. Present your perspective using {auth.get('name', author)}'s narrative techniques
 3. Use literary style to make philosophical concepts accessible
@@ -316,15 +371,11 @@ Write in a style both philosophically authentic and literarily engaging."""
             prompt = f"""You are {phil.get('name', philosopher)}, the {phil.get('era', '')} philosopher.
 Express your philosophical ideas through {auth.get('name', author)}'s literary style.
 
-Your philosophical approach: {phil.get('beliefs', '')}
-Key concepts: {', '.join(phil.get('key_concepts', []))}
-
-Writing characteristics: {auth.get('characteristics', '')}
-Literary voice: {auth.get('voice', '')}
+{front_matter}
 
 Topic for discussion: "{topic}"
 
-Craft an opening statement (2-3 paragraphs) that:
+Craft an opening statement (2-3 sentences) that:
 1. Introduces your philosophical perspective on this topic
 2. Uses {auth.get('name', author)}'s narrative techniques to engage modern readers  
 3. Poses questions or observations inviting deeper exploration
@@ -556,9 +607,9 @@ def handle_continue_dialogue(data):
         history = conversation['history']
         
         # Check exchange limit
-        if conversation['exchange_count'] >= 20:
-            emit('generation_error', {'error': 'Maximum exchanges reached'})
-            return
+        # if conversation['exchange_count'] >= 20:
+        #     emit('generation_error', {'error': 'Maximum exchanges reached'})
+        #     return
         
         def generate_continuation():
             # Generate two more exchanges
